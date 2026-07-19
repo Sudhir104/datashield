@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color tokens - "Official Seal" direction: navy + brass on warm paper */
+  --color-ink: #1B2A4A;
+  --color-ink-light: #2A3D63;
+  --color-paper: #FAF8F3;
+  --color-paper-dim: #F1EDE3;
+  --color-brass: #B08D57;
+  --color-brass-light: #D4B483;
+  --color-slate: #5B6472;
+  --color-rust: #B54834;
+  --color-moss: #3F6B4F;
+  --color-line: #E3DDCC;
+
+  --font-display: 'Fraunces', serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible keyboard focus - accessibility floor */
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Ledger-style rule lines for the checklist register */
+.ledger-row {
+  border-bottom: 1px solid var(--color-line);
+}
+.ledger-row:last-child {
+  border-bottom: none;
+}
